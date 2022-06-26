@@ -55,7 +55,7 @@ for items in list:
     os.mkdir(path)
 
 root_path_business = 'data_lake/business'
-list_business= ['reports', 'features', 'forecast']
+list_business= ['reports', 'features', 'forecasts']
 
 for items in list_business:
     path = os.path.join(root_path_business, items)
