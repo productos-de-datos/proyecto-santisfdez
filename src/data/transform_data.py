@@ -7,10 +7,31 @@ def transform_data():
     H23.
 
     """
-    raise NotImplementedError("Implementar esta función")
+
+import pandas as pd
+import xlwt
+
+start = 1995
+end = 2022
+repo_path = 'data_lake/landing'
+final_path = 'data_lake/raw/'
+
+for year_to_download in range (start, end):
+    try: 
+        files = pd.read_excel(repo_path + '/' + str(year_to_download) + '.xlsx')
+        files.to_csv(final_path + str(year_to_download) + '.csv', index=None, header=True)
+    except:
+        files = pd.read_excel(repo_path + '/' + str(year_to_download) + '.xls')
+        files.to_csv(final_path + str(year_to_download) + '.csv', index=None, header=True)
+
+
+
+#raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":
     import doctest
+
+    transform_data()
 
     doctest.testmod()
