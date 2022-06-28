@@ -12,10 +12,24 @@ def clean_data():
 
 
     """
-    raise NotImplementedError("Implementar esta función")
+import pandas as pd
+import glob
+import os
+#final_path = 'data_lake/cleansed'
+os.chdir('data_lake/raw')
+file_extension = '.csv'
+file_names = [ i for i in glob.glob(f"*{file_extension}")]
+correct_file_names = file_names[2:]
+concatenate_files = pd.concat([pd.read_csv(file) for file in correct_file_names])
+os.chdir('../cleansed')
+concatenate_files.to_csv('precios-horarios.csv')
 
+
+#raise NotImplementedError("Implementar esta función")
 
 if __name__ == "__main__":
+
+    clean_data()
     import doctest
 
     doctest.testmod()
