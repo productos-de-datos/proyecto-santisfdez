@@ -25,7 +25,7 @@ file = file[['Fecha', 'Precio']]
 file['Fecha'] = pd.to_datetime(file['Fecha'])
 daily_ave_prices = file.groupby('Fecha', as_index=False).mean({'Precio': 'Precio'})
 
-daily_ave_prices.to_csv( final_path + 'precios-horarios' + '.csv', index=None, header= True)
+daily_ave_prices.to_csv( final_path + 'precios-diarios' + '.csv', index=None, header= True)
 
 if __name__ == "__main__":
     import doctest
