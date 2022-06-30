@@ -7,6 +7,7 @@
 .PHONY: make_features
 .PHONY: train_model
 
+
 create_data_lake:
 	python3 src/data/create_data_lake.py
 
