@@ -69,7 +69,7 @@ class make_daily_prices(Task):
 class make_monthly_prices(Task):
 
     def requires(self):
-        return make_daily_prices()
+        return make_clean_data()
     
     def output(self):
         return LocalTarget('data_lake/business/arc.csv')
