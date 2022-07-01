@@ -80,7 +80,7 @@ class make_monthly_prices(Task):
             compute_monthly_prices()
 
 if __name__ == "__main__":
-
+     luigi.run(["make_monthly_prices", "--local-scheduler"])
     #raise NotImplementedError("Implementar esta función")
 
 if __name__ == "__main__":
