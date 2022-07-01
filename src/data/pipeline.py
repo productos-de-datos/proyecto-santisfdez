@@ -11,7 +11,7 @@ En luigi llame las funciones que ya creo.
 
 
 """
-from data.compute_daily_prices import compute_daily_prices
+
 import luigi
 from luigi import Task, LocalTarget
 
@@ -46,7 +46,7 @@ class make_clean_data(Task):
         return transform_data()
     
     def output(self):
-        return LocalTarget('data_lake/cleansed/arc.csv')
+        return LocalTarget('data_lake/cleansed/arc.txt')
 
     def run(self):
         from clean_data import clean_data
@@ -59,7 +59,7 @@ class make_daily_prices(Task):
         return make_clean_data()
 
     def output(self):
-        return LocalTarget('data_lake/business/arc.csv') 
+        return LocalTarget('data_lake/business/arc.txt') 
     
     def run(self):
         from compute_daily_prices import compute_daily_prices
@@ -69,10 +69,10 @@ class make_daily_prices(Task):
 class make_monthly_prices(Task):
 
     def requires(self):
-        return make_clean_data()
+        return make_daily_prices()
     
     def output(self):
-        return LocalTarget('data_lake/business/arc.csv')
+        return LocalTarget('data_lake/business/arc.txt')
     
     def run(self):
         from compute_monthly_prices import compute_monthly_prices
