@@ -21,7 +21,7 @@ def make_features():
     def test_make_features():
         make_features()
 
-        file_to_test = precios_diarios = pd.read_csv('data_lake/business/features/precios_diarios.csv', index_col=None, header=0)
+        file_to_test = precios_diarios = pd.read_csv('data_lake/business/features/precios_diarios.csv')
 
         assert file_to_test.empty is False
     
