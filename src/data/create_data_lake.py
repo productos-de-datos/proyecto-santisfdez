@@ -18,29 +18,9 @@ def create_data_lake():
               |___ forecasts/
 
     ```
-
-
-    """
-"""
 Función que genera una carpeta data_lake en la raiz del proyecto, con el fin de almacenar los datos requeridos
 para el desarrollo de los modelos del proyecto. 
 
-Ejemplo:
-
->>> os.mkdir('data_lake')
->>> root_path ='data_lake/'
->>> list =['landing', 'raw', 'cleansed', 'business']
->>> for items in list:
->>>    path = os.path.join(root_path, items)
->>>    os.mkdir(path)
-.
-    |
-    \___ data_lake/
-         |___ landing/
-         |___ raw/
-         |___ cleansed/
-         \___ business/
-      
 """
 import os
 import sys
