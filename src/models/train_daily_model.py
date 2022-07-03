@@ -30,7 +30,7 @@ def train_daily_model():
 
     P = 13
     X = []
-    for t in range(P - 1, 9416 - 1):
+    for t in range(P - 1, 9417 - 1):
         X.append([data_scaled[t - n] for n in range(P)])
 
     observed_scaled = data_scaled[P:]
@@ -47,7 +47,7 @@ def train_daily_model():
         max_iter=10000,
     )
 
-    mlp.fit(X[0:9043], observed_scaled[0:9043]) 
+    mlp.fit(X[0:9044], observed_scaled[0:9044]) 
 
     pickle.dump(mlp, open('src/models/precios-diarios.pkl', 'wb'))
 
