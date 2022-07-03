@@ -19,7 +19,8 @@ def make_features():
     precios_diarios.to_csv('data_lake/business/features/precios_diarios.csv', index=None)
     
     import pytest
-    def test_features():
+    def test_features(self):
+        """Función de prueba de test"""
         import pandas as pd
         make_features()
 
