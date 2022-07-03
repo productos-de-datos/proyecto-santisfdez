@@ -13,12 +13,14 @@ def make_features():
 
     """
     import pandas as pd
-    import pytest
+    
 
     precios_diarios = pd.read_csv('data_lake/business/precios-diarios.csv', index_col=None, header=0)
     precios_diarios.to_csv('data_lake/business/features/precios_diarios.csv', index=None)
     
+    import pytest
     def test_make_features():
+        
         make_features()
 
         file_to_test = precios_diarios = pd.read_csv('data_lake/business/features/precios_diarios.csv')
@@ -30,8 +32,6 @@ def make_features():
 
 
 if __name__ == "__main__":
-
-    make_features()
     import doctest
-
+    make_features()
     doctest.testmod()
