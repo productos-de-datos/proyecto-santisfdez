@@ -24,7 +24,7 @@ def make_features():
         import pandas as pd
         make_features()
 
-        precios_diarios = pd.read_csv('data_lake/business/features/precios_diarios.csv')
+        precios_diarios = pd.read_csv('data_lake/business/precios-diarios.csv')
 
         assert precios_diarios.empty is False
     
