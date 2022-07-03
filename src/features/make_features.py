@@ -20,10 +20,10 @@ def make_features():
     
     import pytest
     def test_make_features():
-        
+
         make_features()
 
-        file_to_test = precios_diarios = pd.read_csv('data_lake/business/features/precios_diarios.csv')
+        file_to_test = pd.read_csv('data_lake/business/features/precios_diarios.csv')
 
         assert file_to_test.empty is False
     
