@@ -1,10 +1,3 @@
-"""
-Módulo de ingestión de datos.
--------------------------------------------------------------------------------
-
-"""
-
-
 def ingest_data():
     """Ingeste los datos externos a la capa landing del data lake.
 
