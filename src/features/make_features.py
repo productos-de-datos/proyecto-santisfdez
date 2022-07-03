@@ -13,11 +13,17 @@ def make_features():
 
     """
     import pandas as pd
+    import pytest
 
     precios_diarios = pd.read_csv('data_lake/business/precios-diarios.csv', index_col=None, header=0)
     precios_diarios.to_csv('data_lake/business/features/precios_diarios.csv', index=None)
     
-    
+    def test_make_features():
+        make_features()
+
+        file_to_test = precios_diarios = pd.read_csv('data_lake/business/features/precios_diarios.csv', index_col=None, header=0)
+
+        assert file_to_test.empty is False
     
     
     #raise NotImplementedError("Implementar esta función")
