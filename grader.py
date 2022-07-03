@@ -6,6 +6,9 @@
 # test_02: pytest
 # test_03: doctest
 #
+"""
+funciones de calificación
+"""
 import os
 import sys
 
