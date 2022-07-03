@@ -30,7 +30,7 @@ def make_forecasts():
 
     P = 13
     X = []
-    for t in range(P - 1, 9416 - 1):
+    for t in range(P - 1, 9417 - 1):
         X.append([data_scaled[t - n] for n in range(P)])
 
     observed_scaled = data_scaled[P:]
@@ -42,7 +42,7 @@ def make_forecasts():
     y_m1 = [u[0] for u in y_m1]
 
     lista = []
-    for i in range(0, 14):
+    for i in range(0, 13):
         t = 0
         lista.append(t)
 
