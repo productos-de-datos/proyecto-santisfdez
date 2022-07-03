@@ -24,9 +24,9 @@ def make_features():
         import pandas as pd
         make_features()
 
-        file_to_test = pd.read_csv('data_lake/business/features/precios_diarios.csv')
+        precios_diarios = pd.read_csv('data_lake/business/features/precios_diarios.csv')
 
-        assert file_to_test.empty is False
+        assert precios_diarios.empty is False
     
     
     #raise NotImplementedError("Implementar esta función")
