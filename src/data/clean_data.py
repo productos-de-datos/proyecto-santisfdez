@@ -72,9 +72,17 @@ def clean_data():
     
     #raise NotImplementedError("Implementar esta función")
 
+    def test_columns_df():
+        correct_prices = read_files(path_origin)
+        #files_csv = csv_file(path_origin)
+        correct_prices = created_format(correct_prices)
+        df_correct_prices, df_correct_prices_backup = create_df()
+
+        assert list(make_correct_prices(correct_prices, df_correct_prices, df_correct_prices_backup).columns.values) == ['Fecha', 'Hora', 'Precios']
+
 if __name__ == "__main__":
 
-    clean_data()
     import doctest
 
     doctest.testmod()
+    clean_data()
