@@ -18,19 +18,12 @@ def make_features():
     precios_diarios = pd.read_csv('data_lake/business/precios-diarios.csv', index_col=None, header=0)
     precios_diarios.to_csv('data_lake/business/features/precios_diarios.csv', index=None)
     
-    import pytest
-    def test_features(self):
-        """Función de prueba de test"""
-        import pandas as pd
-        make_features()
-
-        precios_diarios = pd.read_csv('data_lake/business/precios-diarios.csv')
-
-        assert precios_diarios.empty is False
-    
-    
     #raise NotImplementedError("Implementar esta función")
 
+    def test_columns():
+        data = pd.read_csv('data_lake/business/features/precios_diarios.csv')
+
+        assert list(data.columns.values) == ['Fecha', 'Precio']
 
 if __name__ == "__main__":
     import doctest
