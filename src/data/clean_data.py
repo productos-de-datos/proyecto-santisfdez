@@ -74,7 +74,7 @@ def clean_data():
 
     def test_columns_df():
         correct_prices = read_files(path_origin)
-        #files_csv = csv_file(path_origin)
+        files_csv = csv_file(path_origin)
         correct_prices = created_format(correct_prices)
         df_correct_prices, df_correct_prices_backup = create_df()
 
