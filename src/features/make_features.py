@@ -20,11 +20,6 @@ def make_features():
     
     #raise NotImplementedError("Implementar esta función")
 
-    def test_columns():
-        data = pd.read_csv('data_lake/business/features/precios_diarios.csv')
-
-        assert list(data.columns.values) == ['Fecha', 'Precio']
-
 if __name__ == "__main__":
     import doctest
     make_features()
